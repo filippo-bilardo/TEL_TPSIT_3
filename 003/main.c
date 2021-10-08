@@ -9,7 +9,7 @@
 * 
 * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *
-* @file main.c
+* @file main.c 
 * @brief External Interrupt example. Toggle red led light when PA3 button is pressed.
 * 
 * @author Filippo Bilardo
