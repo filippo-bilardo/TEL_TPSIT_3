@@ -9,7 +9,7 @@
 *
 * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *
-* \mainpage STML476VG Framework
+* \mainpage STML476VG Framework 
 *
 * @brief FRAMEWORK per l'utilizzo del microcontrollore ARM Cortex-M4 presente nelle
 * schede STML476VG Discovery e supporto al kernel FreeRTOS
