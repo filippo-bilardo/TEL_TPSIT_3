@@ -1,9 +1,6 @@
 #include "adc.h"
 #include "stm32l4xx.h"
 
-// Analog Inputs: 
-// PA2 (ADC12_IN7)
-// These pins are not used: PA0 (ADC12_IN5), PA1 (ADC12_IN6), PA3 (ADC12_IN8)
 
 //******************************************************************************************
 // STM32L4x6xx Errata sheet
@@ -16,6 +13,12 @@
 // of any ADC channel. This conversion should not be taken into account by the application.
 
 
+void adcInit(int pin) {
+}
+
+// Analog Inputs: 
+// PA2 (ADC12_IN7)
+// These pins are not used: PA0 (ADC12_IN5), PA1 (ADC12_IN6), PA3 (ADC12_IN8)
 void adc1Init() {
 	
 	int TADCVREG_STUP=SystemCoreClock/1000000*20;  //20 us
@@ -35,7 +38,7 @@ void adc1Init() {
 	// GPIO port analog switch control register (ASCR)
 	// 0: Disconnect analog switch to the ADC input (reset state)
 	// 1: Connect analog switch to the ADC input
-	GPIOA->ASCR |= GPIO_ASCR_EN_1;  //collegamento PA1 con ADC1
+	//GPIOA->ASCR |= GPIO_ASCR_EN_1;  //collegamento PA1 con ADC1
 	GPIOA->ASCR |= GPIO_ASCR_EN_2;  //collegamento PA2 con ADC1
 	RCC->AHB2ENR |= RCC_AHB2ENR_ADCEN;  //abilitazione clock ADC1
 	ADC1->CR &= ~ ADC_CR_ADEN;  //disabilitazione ADC1
@@ -112,5 +115,13 @@ void adc1Wakeup() {
 	while(wait_time != 0) {
 		wait_time--;
 	}
+}
+
+uint16_t analogRead(int pin) {
+	
+	
+	//scrivere il vostro codice qui
+	
+	return adc1Read();
 }
 
