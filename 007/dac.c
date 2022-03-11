@@ -5,7 +5,8 @@
 void dacWrite(uint16_t value) {
 
 	// DAC channel2 12-bit right aligned data holding register;
-	DAC->DHR12R2 = (value) % 4096;
+	if(value > 4095) value %= 4096;
+	DAC->DHR12R2 = value;
 
 	// DAC software trigger register (DAC_SWTRGR)
 	DAC->SWTRIGR |= DAC_SWTRIGR_SWTRIG2; 
